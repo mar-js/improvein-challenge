@@ -1,5 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "libs",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/atoms": ["components/atoms/index"],
+      "@components/molecules": ["components/molecules/index"],
+      "@components/organisms": ["components/organisms/index"],
+      "@layouts": ["layouts/index"],
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
