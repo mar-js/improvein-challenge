@@ -7,6 +7,7 @@
       "@components/molecules": ["components/molecules/index"],
       "@components/organisms": ["components/organisms/index"],
       "@layouts": ["layouts/index"],
+      "@redux/*": ["redux/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
