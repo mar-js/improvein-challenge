@@ -4,7 +4,7 @@ import SEARCH_SLICE from '../search'
 import { SEARCH_BAND } from '../type'
 
 describe('search', () => {
-  const INITIAL_STATE: { search: string } = { search: '' }
+  const INITIAL_STATE: { searchText: string } = { searchText: '' }
 
   it('render SEARCH_BAND.type', () => {
     const ACTION = { type: [ SEARCH_BAND.type ] }
