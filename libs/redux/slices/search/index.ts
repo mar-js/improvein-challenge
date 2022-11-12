@@ -1,9 +1,15 @@
 import { HYDRATE } from 'next-redux-wrapper'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { SEARCH_BAND } from './type'
+import { SEARCH_BAND } from '../type'
 
 const INITIAL_STATE: { search: string } = { search: '' }
+
+type TAction = {
+  payload: {
+    search: string
+  }
+}
 
 const SEARCH_SLICE = createSlice({
   name: 'search',
@@ -16,7 +22,7 @@ const SEARCH_SLICE = createSlice({
   },
   extraReducers: builder =>
     builder
-      .addCase(HYDRATE, (state, action) => ({ ...action.payload.search }))
+      .addCase(HYDRATE, (state, action) => ({ search: (action as unknown as TAction).payload.search }))
 })
 
 export const { search_band } = SEARCH_SLICE.actions

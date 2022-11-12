@@ -1,6 +1,6 @@
 import { IBand } from '@assets/interfaces'
 
-export const getBands = async (params?: string): Promise<IBand[] | IBand | [] | void> => {
+export const getBands = async (params?: string): Promise<IBand[] | IBand | [] | null> => {
   try {
     const RESPONSE = await fetch(`${process.env.URL}/${params}`)
 
@@ -12,6 +12,8 @@ export const getBands = async (params?: string): Promise<IBand[] | IBand | [] | 
 
     return []
   } catch (error) {
-    return console.error('ERROR: ', error)
+    console.error('ERROR: ', error)
+
+    return null
   }
 }
