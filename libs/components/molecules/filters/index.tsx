@@ -51,7 +51,7 @@ export const Filters: React.FC = () => {
         />
         <Button type="submit" >Search</Button>
       </Form>
-      <Select name="select" onChange={ (e: FormEvent) => DISPATCH(filter((e.target as HTMLInputElement).value)) }>
+      <Select defaultValue="default" name="select" onChange={ (e: FormEvent) => DISPATCH(filter((e.target as HTMLInputElement).value)) }>
         <Option value="default" selected>Filters</Option>
         { FILTERS.map(({ id, option, value }) => (
           <Option data-testid="select" key={ id } value={ value }>{ option }</Option>
