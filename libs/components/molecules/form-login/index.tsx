@@ -1,5 +1,3 @@
-import { profile_login } from '@redux/slices/profile'
-import { useAppDispatch } from 'hooks/redux'
 import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
 import {
@@ -11,7 +9,6 @@ import {
 } from './styles'
 
 export const FormLogin: React.FC = () => {
-  const DISPATCH = useAppDispatch()
   const { push } = useRouter()
   const [ credentials, setCredentials ] = useState({
     email: '',
@@ -31,12 +28,6 @@ export const FormLogin: React.FC = () => {
         },
         body: JSON.stringify(credentials)
       })
-      const { email, username } = credentials
-
-      DISPATCH(profile_login({
-        email,
-        username
-      }))
 
       if (RESPONSE.status === 200) push('/bands')
     } catch (error) {

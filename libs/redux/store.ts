@@ -5,15 +5,13 @@ import bands from './slices/bands'
 import band from './slices/band'
 import filter from './slices/filter'
 import search from './slices/search'
-import profile from './slices/profile'
 
 export const STORE = configureStore({
   reducer: {
     bands,
     band,
     filter,
-    search,
-    profile
+    search
   }
 })
 
