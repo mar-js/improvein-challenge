@@ -54,7 +54,7 @@ export const Filters: React.FC = () => {
       <Select name="select" onChange={ (e: FormEvent) => DISPATCH(filter((e.target as HTMLInputElement).value)) }>
         <Option value="default" selected>Filters</Option>
         { FILTERS.map(({ id, option, value }) => (
-          <Option key={ id } value={ value }>{ option }</Option>
+          <Option data-testid="select" key={ id } value={ value }>{ option }</Option>
         )) }
       </Select>
       <Button type="button" onClick={ HANDLE_RESET }>Reset</Button>

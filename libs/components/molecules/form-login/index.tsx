@@ -52,6 +52,7 @@ export const FormLogin: React.FC = () => {
           onChange={ HANDLE_CHANGE }
           type="username"
           name="username"
+          placeholder="Jhon Doe"
           required
         />
       </InputGroup>
@@ -61,6 +62,7 @@ export const FormLogin: React.FC = () => {
           onChange={ HANDLE_CHANGE }
           type="email"
           name="email"
+          placeholder="jhon@doe.com"
           required
         />
       </InputGroup>
@@ -70,6 +72,7 @@ export const FormLogin: React.FC = () => {
           onChange={ HANDLE_CHANGE }
           type="password"
           name="password"
+          placeholder="12345"
           required
         />
       </InputGroup>

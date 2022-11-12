@@ -36,11 +36,11 @@ export const ProfileCard: React.FC = () => {
             email: ''
           })
         }, 1000)
+
+        push('/')
       } catch (error) {
         console.error('ERROR: ', error)
       }
-
-      push('/')
     }
   }
 
