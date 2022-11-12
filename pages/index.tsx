@@ -19,7 +19,7 @@ function Home() {
   )
 }
 
-export const getStaticProps: GetServerSideProps = WRAPPER.getServerSideProps(store => async () => {
+export const getServerSideProps: GetServerSideProps = WRAPPER.getServerSideProps(store => async () => {
   const BANDS = await getBands('bands')
 
   store.dispatch(get_bands((BANDS as IBand[])))
