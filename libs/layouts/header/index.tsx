@@ -1,4 +1,4 @@
-import { Nav } from '../nav'
+import { Nav } from '@layouts/nav'
 
 import { HeaderContainer } from './styles'
 

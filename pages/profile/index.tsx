@@ -1,5 +1,5 @@
+import { Section } from '@layouts/section'
 import { ProfileCard } from '@components/molecules'
-import { Section } from 'layouts/section'
 
 export default function Profile() {
   return (

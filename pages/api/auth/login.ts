@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+
 import jwt from 'jsonwebtoken'
 import { serialize } from 'cookie'
 

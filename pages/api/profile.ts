@@ -1,5 +1,6 @@
-import { verify } from 'jsonwebtoken'
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { verify } from 'jsonwebtoken'
 
 export default function profile(req: NextApiRequest, res: NextApiResponse) {
   const { token_name } = req.cookies

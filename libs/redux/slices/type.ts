@@ -1,5 +1,6 @@
-import { IProfile, IBand } from '@assets/interfaces'
 import { createAction } from '@reduxjs/toolkit'
+
+import { IProfile, IBand } from '@assets/interfaces'
 
 export const GET_BANDS = createAction<IBand[], 'get_bands'>('get_bands')
 export const GET_BAND = createAction<IBand, 'get_band'>('get_band')

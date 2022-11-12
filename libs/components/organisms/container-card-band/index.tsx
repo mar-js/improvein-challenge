@@ -1,8 +1,12 @@
-import { BandItem } from '@components/molecules'
-import { handleSearch } from 'helpers/handle-search'
-import { handleHydrateDataBand } from 'helpers/handle-sort'
-import { useAppSelector } from 'hooks/redux'
 import { useEffect, useState } from 'react'
+
+import { useAppSelector } from '@hooks/redux'
+
+import { handleSearch } from '@helpers/handle-search'
+import { handleHydrateDataBand } from '@helpers/handle-sort'
+
+import { BandItem } from '@components/molecules'
+
 import { Container } from './styles'
 
 export const ContainerCardBand: React.FC = () => {

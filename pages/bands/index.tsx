@@ -1,12 +1,15 @@
-import { Filters } from '@components/molecules'
-
-import { ContainerCardBand } from '@components/organisms'
-import { getBands } from 'services/get-bands'
 import { GetServerSideProps } from 'next'
-import { IBand } from '@assets/interfaces'
-import { RootState, WRAPPER } from 'redux/store'
+
 import { connect } from 'react-redux'
-import { get_bands } from 'redux/slices/bands'
+
+import { RootState, WRAPPER } from '@redux/store'
+import { get_bands } from '@redux/slices/bands'
+
+import { IBand } from '@assets/interfaces'
+import { getBands } from '@services/get-bands'
+
+import { Filters } from '@components/molecules'
+import { ContainerCardBand } from '@components/organisms'
 
 function Bands() {
   return (

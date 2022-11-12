@@ -1,8 +1,10 @@
 import type { AppProps } from 'next/app'
 
+import { WRAPPER } from '@redux/store'
+
 import { GlobalStyles } from '@assets/styles'
+
 import { Layout } from '@layouts'
-import { WRAPPER } from '../libs/redux/store'
 
 function App({ Component, pageProps }: AppProps) {
   return (

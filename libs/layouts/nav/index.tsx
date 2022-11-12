@@ -1,10 +1,11 @@
-import { Logo } from '@components/atoms'
-import { NavigationItem } from '@components/molecules'
+import { useRouter } from 'next/router'
 
 import { NAVIGATION } from '@assets/data-static'
 
+import { Logo } from '@components/atoms'
+import { NavigationItem } from '@components/molecules'
+
 import { List, NavContainer } from './styles'
-import { useRouter } from 'next/router'
 
 export const Nav: React.FC = () => {
   const { pathname } = useRouter()

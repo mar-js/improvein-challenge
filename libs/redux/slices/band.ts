@@ -1,7 +1,9 @@
-import { IBand } from '@assets/interfaces'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { GET_BAND } from './type'
 import { HYDRATE } from 'next-redux-wrapper'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+import { IBand } from '@assets/interfaces'
+
+import { GET_BAND } from './type'
 
 const INITIAL_STATE: IBand = {
   id: 0,

@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { createWrapper } from 'next-redux-wrapper'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
 import bands from './slices/bands'
 import band from './slices/band'

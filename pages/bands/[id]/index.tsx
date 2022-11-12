@@ -1,11 +1,15 @@
-import { IBand, IBandD, IParams } from '@assets/interfaces'
-import { ContainerBandDescription } from '@components/organisms'
-import { Section } from 'layouts/section'
 import { GetServerSideProps } from 'next'
-import { get_band } from 'redux/slices/band'
-import { RootState, WRAPPER } from 'redux/store'
-import { getBands } from 'services/get-bands'
+
 import { connect } from 'react-redux'
+
+import { RootState, WRAPPER } from '@redux/store'
+import { get_band } from '@redux/slices/band'
+
+import { IBand, IBandD, IParams } from '@assets/interfaces'
+import { getBands } from '@services/get-bands'
+
+import { Section } from '@layouts/section'
+import { ContainerBandDescription } from '@components/organisms'
 
 function Band({ band }: IBandD) {
   return (

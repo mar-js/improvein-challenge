@@ -1,6 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { SEARCH_BAND } from './type'
 import { HYDRATE } from 'next-redux-wrapper'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+import { SEARCH_BAND } from './type'
 
 const INITIAL_STATE: { search: string } = { search: '' }
 

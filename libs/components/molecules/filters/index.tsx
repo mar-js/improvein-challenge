@@ -1,8 +1,12 @@
-import { FILTERS } from '@assets/data-static'
-import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { FormEvent, useState } from 'react'
-import { filter } from 'redux/slices/filter'
-import { search_band } from 'redux/slices/search'
+
+import { FILTERS } from '@assets/data-static'
+
+import { useAppDispatch, useAppSelector } from '@hooks/redux'
+
+import { filter } from '@redux/slices/filter'
+import { search_band } from '@redux/slices/search'
+
 import {
   ContainerFilters,
   Form,
