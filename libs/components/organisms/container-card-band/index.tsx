@@ -1,14 +1,13 @@
-import { IBandP } from '@assets/interfaces'
 import { BandItem } from '@components/molecules'
 import { handleSearch } from 'helpers/handle-search'
 import { useAppSelector } from 'hooks/redux'
 import { useEffect, useState } from 'react'
 import { Container } from './styles'
 
-export const ContainerCardBand: React.FC<IBandP> = ({ bands }) => {
+export const ContainerCardBand: React.FC = () => {
+  const { bands, filter: { order }, search: { search } } = useAppSelector(state => state)
   const [ bandsCopy, setBandsCopy ] = useState(bands)
   const [ loader, setLoader ] = useState(false)
-  const { filter: { order }, search: { search } } = useAppSelector(state => state)
 
   useEffect(() => {
     if (order === 'asc') {
@@ -45,7 +44,12 @@ export const ContainerCardBand: React.FC<IBandP> = ({ bands }) => {
 
       setBandsCopy([ SEARCH_BAND ])
     }
-  }, [ order, search ])
+  }, [
+    bandsCopy,
+    bands,
+    order,
+    search
+  ])
 
   return (
     <Container>
