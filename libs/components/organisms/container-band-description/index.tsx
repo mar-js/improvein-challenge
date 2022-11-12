@@ -4,14 +4,14 @@ import { IBandD } from '@assets/interfaces'
 
 import { BandDescription } from '@components/molecules'
 
-import { Container } from './styles'
+import { Button, Container } from './styles'
 
 export const ContainerBandDescription: React.FC<IBandD> = ({ band }) => {
   const { back } = useRouter()
 
   return (
     <Container>
-      <button onClick={ back } type="button">Back</button>
+      <Button onClick={ back } type="button">Back</Button>
       <BandDescription { ...band } />
     </Container>
   )
