@@ -1,5 +1,3 @@
-import { profile_closed } from '@redux/slices/profile'
-import { useAppDispatch } from 'hooks/redux'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import {
@@ -10,7 +8,6 @@ import {
 } from './styles'
 
 export const ProfileCard: React.FC = () => {
-  const DISPATCH = useAppDispatch()
   const { push } = useRouter()
   const [ user, setUser ] = useState({
     username: '',
@@ -36,8 +33,6 @@ export const ProfileCard: React.FC = () => {
             username: '',
             email: ''
           })
-
-          DISPATCH(profile_closed())
         }, 1000)
       } catch (error) {
         console.error('ERROR: ', error)
