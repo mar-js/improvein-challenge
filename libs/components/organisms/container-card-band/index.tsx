@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useAppSelector } from '@hooks/redux'
 
 import { handleSearch } from '@helpers/handle-search'
-import { handleHydrateDataBand } from '@helpers/handle-sort'
+import { handleHydrateDataBand } from '@helpers/handle-hydrate-data-band'
 
 import { BandItem } from '@components/molecules'
 
@@ -23,7 +23,7 @@ export const ContainerCardBand: React.FC = () => {
 
     if (search !== '') {
       const SEARCH_BAND = handleSearch(bandsCopy, search)
-      console.log('aaaaaa', SEARCH_BAND)
+
       setBandsCopy([ SEARCH_BAND ])
     }
   }, [

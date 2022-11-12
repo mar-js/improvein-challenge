@@ -31,6 +31,11 @@ export const Filters: React.FC = () => {
 
   const HANDLE_CHANGE = (e: FormEvent) => (e.target as HTMLInputElement).value.length > 3 && setSearchText((e.target as HTMLInputElement).value)
 
+  const HANDLE_RESET = () => {
+    DISPATCH(filter('default'))
+    DISPATCH(search_band(''))
+  }
+
   return (
     <ContainerFilters>
       <Form onSubmit={ HANDLE_SUBMIT }>
@@ -48,7 +53,7 @@ export const Filters: React.FC = () => {
           <Option key={ id } value={ value }>{ option }</Option>
         )) }
       </Select>
-      <Button type="button" onClick={ () => DISPATCH(filter('default')) }>Reset</Button>
+      <Button type="button" onClick={ HANDLE_RESET }>Reset</Button>
     </ContainerFilters>
   )
 }
