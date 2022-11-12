@@ -3,6 +3,20 @@
     "browser": true,
     "es2021": true
   },
+"settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -12,11 +26,8 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
   },
   "plugins": [
     "react",
@@ -73,6 +84,7 @@
     "generator-star-spacing": [2, "both"],
     "guard-for-in": 0,
     "handle-callback-err": [2, "^(err|error|anySpecificError)$"],
+    "import/no-unresolved": "error",
     "indent": [
       2,
       2,

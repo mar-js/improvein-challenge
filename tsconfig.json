@@ -7,7 +7,11 @@
       "@components/molecules": ["components/molecules/index"],
       "@components/organisms": ["components/organisms/index"],
       "@layouts": ["layouts/index"],
+      "@layouts/*": ["layouts/*"],
       "@redux/*": ["redux/*"],
+      "@helpers/*": ["helpers/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
