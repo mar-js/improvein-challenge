@@ -21,6 +21,8 @@ export const Filters: React.FC = () => {
     e.preventDefault()
 
     DISPATCH(search_band(searchText))
+
+    setSearchText('')
   }
 
   const HANDLE_CHANGE = (e: FormEvent) => (e.target as HTMLInputElement).value.length > 3 && setSearchText((e.target as HTMLInputElement).value)
@@ -34,9 +36,9 @@ export const Filters: React.FC = () => {
           name="search"
           placeholder="Search..."
         />
-        <Button type="submit">Search</Button>
+        <Button type="submit" >Search</Button>
       </Form>
-      <Select name="select" onChange={ (e: FormEvent) => DISPATCH(filter(e.target.value)) }>
+      <Select name="select" onChange={ (e: FormEvent) => DISPATCH(filter((e.target as HTMLInputElement).value)) }>
         <Option value="default" selected>Filters</Option>
         { FILTERS.map(({ id, option, value }) => (
           <Option key={ id } value={ value }>{ option }</Option>
