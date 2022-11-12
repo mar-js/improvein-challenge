@@ -17,19 +17,23 @@ import {
 } from './styles'
 
 export const Filters: React.FC = () => {
-  const { search } = useAppSelector(state => state.search)
+  const { searchText } = useAppSelector(state => state.search)
   const DISPATCH = useAppDispatch()
-  const [ searchText, setSearchText ] = useState(search)
+  const [ searchTextTextInput, setSearchTextInput ] = useState(searchText)
 
   const HANDLE_SUBMIT = (e: FormEvent) => {
     e.preventDefault()
 
-    DISPATCH(search_band(searchText))
+    if ((e.target as HTMLInputElement).value && (e.target as HTMLInputElement).value.length > 3) {
+      DISPATCH(search_band(searchTextTextInput))
 
-    setSearchText('')
+      setSearchTextInput('')
+    }
+
+    return null
   }
 
-  const HANDLE_CHANGE = (e: FormEvent) => (e.target as HTMLInputElement).value.length > 3 && setSearchText((e.target as HTMLInputElement).value)
+  const HANDLE_CHANGE = (e: FormEvent) => (e.target as HTMLInputElement).value.length > 3 && setSearchTextInput((e.target as HTMLInputElement).value)
 
   const HANDLE_RESET = () => {
     DISPATCH(filter('default'))

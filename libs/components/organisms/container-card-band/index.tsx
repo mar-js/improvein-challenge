@@ -10,7 +10,7 @@ import { BandItem } from '@components/molecules'
 import { Container } from './styles'
 
 export const ContainerCardBand: React.FC = () => {
-  const { bands, filter: { order }, search: { search } } = useAppSelector(state => state)
+  const { bands, filter: { order }, search: { searchText } } = useAppSelector(state => state)
   const [ bandsCopy, setBandsCopy ] = useState(bands)
   const [ loader, setLoader ] = useState(false)
 
@@ -21,15 +21,15 @@ export const ContainerCardBand: React.FC = () => {
 
     setTimeout(() => setLoader(false), 1000)
 
-    if (search !== '') {
-      const SEARCH_BAND = handleSearch(bandsCopy, search)
+    if (searchText) {
+      const SEARCH_BAND = handleSearch(bandsCopy, searchText)
 
       setBandsCopy([ SEARCH_BAND ])
     }
   }, [
     bands,
     order,
-    search
+    searchText
   ])
 
   return (
