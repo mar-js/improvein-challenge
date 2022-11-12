@@ -1,4 +1,8 @@
-import { IBand, INavigation } from '@assets/interfaces'
+import {
+  IBand,
+  INavigation,
+  IProfile
+} from '@assets/interfaces'
 
 export const DATA_BAND: IBand = {
   id: 1,
@@ -190,3 +194,8 @@ export const DATA_FECH_BANDS: IBand[] = [
     ]
   }
 ]
+
+export const DATA_PROFILE_FULL: IProfile = {
+  username: 'Pedro',
+  email: 'admin@admin.com'
+}

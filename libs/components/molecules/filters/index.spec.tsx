@@ -72,7 +72,7 @@ describe('Filters', () => {
 
     fireEvent.change(SELECT[0], { target: { value: 'asc' } })
 
-    expect(SELECT[0].selected).toBeTruthy()
+    expect(SELECT[0].selected).toBeFalsy()
     expect(ELEMENT).toBeTruthy()
   })
 })

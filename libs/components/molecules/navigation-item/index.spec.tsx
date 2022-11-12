@@ -24,13 +24,13 @@ jest.mock('next/router', () => ({
 
 describe('NavigationItem', () => {
   it('render', () => {
-    const { baseElement } = render(<NavigationItem { ...DATA_NAVIGATION } />)
+    const { baseElement } = render(<NavigationItem { ...DATA_NAVIGATION[0] } />)
 
     expect(baseElement).toBeTruthy()
   })
 
   it('render click', () => {
-    const { baseElement } = render(<NavigationItem { ...DATA_NAVIGATION } />)
+    const { baseElement } = render(<NavigationItem { ...DATA_NAVIGATION[0] } />)
 
     fireEvent.click(baseElement)
 
