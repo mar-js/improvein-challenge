@@ -4,9 +4,10 @@ export interface IChildren {
   children: React.ReactNode
 }
 
-export interface IAuth {
-  user: string | null;
-  token: string | null;
+export interface IProfile {
+  username: string | null;
+  email: string | null;
+  password?: string | null;
 }
 
 export interface IFilters {
