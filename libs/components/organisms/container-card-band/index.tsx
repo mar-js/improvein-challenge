@@ -24,7 +24,7 @@ export const ContainerCardBand: React.FC = () => {
     if (searchText) {
       const SEARCH_BAND = handleSearch(bandsCopy, searchText)
 
-      setBandsCopy([ SEARCH_BAND ])
+      setBandsCopy(SEARCH_BAND ? [ SEARCH_BAND ] : [])
     }
   }, [
     bands,
@@ -36,7 +36,7 @@ export const ContainerCardBand: React.FC = () => {
     <Container>
       { loader ? '....' : (
         <>
-          { !bandsCopy ? 'not band/s' : (
+          { !bandsCopy || !bandsCopy.length ? 'not band/s' : (
             <>
               { bandsCopy.map(band => (
                 <BandItem key={ band.id } { ...band } />

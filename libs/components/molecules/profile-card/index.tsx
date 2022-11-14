@@ -18,9 +18,12 @@ export const ProfileCard: React.FC = () => {
 
   const GET_PROFILE = async () => {
     const RESPONSE = await fetch('/api/profile')
-    const DATA = await RESPONSE.json()
+    const { username, email } = await RESPONSE.json() as { username: string; email: string}
 
-    setUser(DATA.USER)
+    setUser({
+      username,
+      email
+    })
   }
 
   const HANDLE_LOGOUT = async () => {
