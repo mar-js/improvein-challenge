@@ -9,12 +9,12 @@ interface ICoockieGetValue {
 }
 
 export async function middleware(req: NextRequest) {
-  const { value } = req.cookies.get('tokenName') as ICoockieGetValue
+  const JWT = req.cookies.get('tokenName') as ICoockieGetValue
 
-  if (!value) return NextResponse.redirect(new URL('/', req.url))
+  if (!JWT) return NextResponse.redirect(new URL('/', req.url))
 
   try {
-    await jwtVerify(value, new TextEncoder().encode(`${process.env.JWT_SECRET}`))
+    await jwtVerify(JWT.value, new TextEncoder().encode(`${process.env.JWT_SECRET}`))
 
     return NextResponse.next()
   } catch (error) {
