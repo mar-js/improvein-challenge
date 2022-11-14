@@ -9,7 +9,7 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
   if (!tokenName) return res.status(401).json({ error: 'NOT TOKEN ' })
 
   try {
-    verify((tokenName as string), (process.env.NEXT_PUBLIC_JWT_SECRET as string))
+    verify((tokenName as string), (process.env.JWT_SECRET as string))
     const SERIALIZED = serialize('tokenName', '', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',

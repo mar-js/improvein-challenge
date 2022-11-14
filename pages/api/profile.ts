@@ -8,7 +8,7 @@ export default function profile(req: NextApiRequest, res: NextApiResponse) {
   if (!tokenName) return res.status(401).json({ error: 'NOT TOKEN ' })
 
   try {
-    const { username, email } = (verify((tokenName as string), (process.env.NEXT_PUBLIC_JWT_SECRET as string)) as { username: string; email: string})
+    const { username, email } = (verify((tokenName as string), (process.env.JWT_SECRET as string)) as { username: string; email: string})
 
     return res.status(200).json({
       username,

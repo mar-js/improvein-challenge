@@ -17,7 +17,7 @@ Create the file `./env.local` and add the next enviroment variables
 
 ```bash
 URL='https://my-json-server.typicode.com/improvein/dev-challenge/'
-NEXT_PUBLIC_JWT_SECRET='123'
+JWT_SECRET='123'
 ```
 
 ## Getting Started
