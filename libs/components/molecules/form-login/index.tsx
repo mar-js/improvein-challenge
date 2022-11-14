@@ -33,7 +33,7 @@ export const FormLogin: React.FC = () => {
 
       if (RESPONSE.status === 200) push('/bands')
     } catch (error) {
-      console.error('ERROR ', error)
+      console.error('ERROR SUBMIT LOGIN: ', error)
     }
   }
 

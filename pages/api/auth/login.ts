@@ -12,8 +12,8 @@ export default function login(req: NextApiRequest, res: NextApiResponse) {
       email,
       password,
       username
-    }, `${process.env.SECRET}`)
-    const SERIALIZED = serialize('token_name', TOKEN, {
+    }, (process.env.NEXT_PUBLIC_JWT_SECRET as string))
+    const SERIALIZED = serialize('tokenName', TOKEN, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',

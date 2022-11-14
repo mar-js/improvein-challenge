@@ -39,7 +39,7 @@ export const ProfileCard: React.FC = () => {
 
         push('/')
       } catch (error) {
-        console.error('ERROR: ', error)
+        console.error('ERROR LOGOUT: ', error)
       }
     }
   }

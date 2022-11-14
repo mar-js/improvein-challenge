@@ -4,13 +4,13 @@ import { verify } from 'jsonwebtoken'
 import { serialize } from 'cookie'
 
 export default function logout(req: NextApiRequest, res: NextApiResponse) {
-  const { token_name } = req.cookies
+  const { tokenName } = req.cookies
 
-  if (!token_name) return res.status(401).json({ error: 'NOT TOKEN ' })
+  if (!tokenName) return res.status(401).json({ error: 'NOT TOKEN ' })
 
   try {
-    verify((token_name as string), `${process.env.SECRET}`)
-    const SERIALIZED = serialize('token_name', '', {
+    verify((tokenName as string), (process.env.NEXT_PUBLIC_JWT_SECRET as string))
+    const SERIALIZED = serialize('tokenName', '', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
@@ -22,6 +22,8 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json('Logout succesfully')
   } catch (error) {
+    console.error('ERROR LOGOUT: ', error)
+
     return res.status(401).json({ error: 'Invalid TOKEN' })
   }
 }

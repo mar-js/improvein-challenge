@@ -12,7 +12,7 @@ export const getBands = async (params?: string): Promise<IBand[] | IBand | [] | 
 
     return []
   } catch (error) {
-    console.error('ERROR: ', error)
+    console.error('ERROR GET BANDS:', error)
 
     return null
   }
