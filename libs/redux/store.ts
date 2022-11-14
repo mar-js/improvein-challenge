@@ -12,7 +12,8 @@ export const STORE = configureStore({
     band,
     filter,
     search
-  }
+  },
+  devTools: process.env.NODE_ENV !== 'production'
 })
 
 export type RootState = ReturnType<typeof STORE.getState>
