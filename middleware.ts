@@ -3,22 +3,26 @@ import type { NextRequest } from 'next/server'
 
 import { jwtVerify } from 'jose'
 
+interface ICoockieGetValue {
+  name: string
+  value: string
+}
+
 export async function middleware(req: NextRequest) {
-  const JWT = req.cookies.get('token_name')
+  const { value } = req.cookies.get('tokenName') as ICoockieGetValue
 
-  if (JWT) {
-    if (req.nextUrl.pathname.includes('/')) {
-      try {
-        await jwtVerify((JWT as unknown as string), new TextEncoder().encode(`${process.env.SECRET}`))
+  if (!value) return NextResponse.redirect(new URL('/', req.url))
 
-        return NextResponse.redirect(new URL('/bands', req.url))
-      } catch (error) {
-        return NextResponse.next()
-      }
-    }
+  try {
+    await jwtVerify(value, new TextEncoder().encode(`${process.env.NEXT_PUBLIC_JWT_SECRET}`))
+
+    return NextResponse.next()
+  } catch (error) {
+    console.error('ERROR MIDDLEWARE: ', error)
+
+    return NextResponse.redirect(new URL('/', req.url))
   }
 
-  return NextResponse.redirect(new URL('/', req.url))
 }
 
 export const config = {
