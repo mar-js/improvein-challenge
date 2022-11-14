@@ -18,7 +18,7 @@ export default function logout(req: NextApiRequest, res: NextApiResponse) {
       path: '/'
     })
 
-    res.setHeader('Set-cookie', SERIALIZED)
+    res.setHeader('Set-Cookie', SERIALIZED)
 
     return res.status(200).json('Logout succesfully')
   } catch (error) {
